@@ -48,5 +48,5 @@ jobs:
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"robert-tessnow-ramirez-sonar_dotnet-xunit-coverlet" /o:"robert-tessnow-ramirez-sonar" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.scanner.sonarcloudUrl="https://sc-staging.io" /d:sonar.scanner.apiBaseUrl="https://api.sc-staging.io" /d:"sonar.cs.opencover.reportsPaths=**/coverage.xml"
           dotnet build
-          dotnet test /p:AltCover=true
+          dotnet test /p:AltCover=true /p:AltCoverXmlCoverage=TestResults/coverage.xml
           ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
