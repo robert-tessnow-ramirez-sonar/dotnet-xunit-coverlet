@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: 17
-          distribution: 'zulu' # Alternative distribution options are available.
+          distribution: 'zulu' # Alternative distribution options are available. test
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
@@ -48,5 +48,5 @@ jobs:
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"robert-tessnow-ramirez-sonar_dotnet-xunit-coverlet" /o:"robert-tessnow-ramirez-sonar" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.scanner.sonarcloudUrl="https://sc-staging.io" /d:sonar.scanner.apiBaseUrl="https://api.sc-staging.io"   /d:"sonar.cs.opencover.reportsPaths=dotnet-xunit-coverlet/**/coverage.xml"
           dotnet build
-          dotnet test /p:AltCover=true , AltCoverForce=true
+          dotnet test /p:AltCover=true , AltCoverForce=true 
           ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
