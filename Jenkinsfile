@@ -22,6 +22,11 @@ node {
       bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"dotnet-xunit-coverlet\""
       bat "dotnet build"
       bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
+      
+      bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"dotnet-xunit-coverlet\""
+      bat "dotnet build"
+      bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
+      
     }
   }
 }
