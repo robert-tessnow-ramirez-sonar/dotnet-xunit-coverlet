@@ -19,7 +19,7 @@ node {
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner for MSBuild'
     withSonarQubeEnv() {
-      bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"dotnet-xunit-coverlet\"" /d:"sonar.verbose=true"
+      bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"dotnet-xunit-coverlet\" /d:"sonar.verbose=true""
       bat "dotnet build"
       bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
     }
@@ -27,7 +27,7 @@ node {
   stage('SonarQube Analysis 2') {
     // def scannerHome = tool 'SonarScanner for MSBuild'
     withSonarQubeEnv() {
-      bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"dotnet-xunit-coverlet\"" /d:"sonar.verbose=true"
+      bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"dotnet-xunit-coverlet\" /d:"sonar.verbose=true""
       bat "dotnet build"
       bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
     }
