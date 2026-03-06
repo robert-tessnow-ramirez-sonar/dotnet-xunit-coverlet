@@ -24,8 +24,8 @@ node {
       bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
     }
     
-  stage('SonarQube Analysis') {
-    def scannerHome = tool 'SonarScanner for MSBuild'
+  stage('SonarQube Analysis 2') {
+    // def scannerHome = tool 'SonarScanner for MSBuild'
     withSonarQubeEnv() {
       bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"dotnet-xunit-coverlet\""
       bat "dotnet build"
