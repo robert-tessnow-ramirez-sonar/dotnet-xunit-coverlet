@@ -32,4 +32,4 @@ The source code includes an MSBuild project file for C# (a *.csproj* file) that 
    1. Navigate to the directory that contains the sample.
    1. Type in the command `dotnet build` to build the solution.
 
-test text
+test text text test
